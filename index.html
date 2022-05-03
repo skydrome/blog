@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="None">
+    
+    
+    <link rel="shortcut icon" href="./img/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Tutorials</title>
+    <link href="./css/bootstrap-3.3.7.min.css" rel="stylesheet">
+    <link href="./css/font-awesome-4.7.0.css" rel="stylesheet">
+    <link href="./css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/highlight.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/bootstrap-3.3.7.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    
+      <script src="./js/elasticlunr.min.js"></script>
+    
+    <base target="_top">
+    <script>
+      var base_url = '.';
+      var is_top_frame = (window === window.parent);
+        
+        var pageToc = [
+          {title: "Create Wireguard interface", url: "#_top", children: [
+              {title: "Allow Forwarding", url: "#allow-forwarding" },
+              {title: "Server Keys", url: "#server-keys" },
+              {title: "Client Keys", url: "#client-keys" },
+              {title: "Generate ipv6 Address", url: "#generate-ipv6-address" },
+              {title: "Config on Server", url: "#config-on-server" },
+              {title: "Config for Clients", url: "#config-for-clients" },
+              {title: "Create qrcode for android app", url: "#create-qrcode-for-android-app" },
+              {title: "SMB", url: "#smb" },
+          ]},
+        ];
+
+    </script>
+    <script src="./js/base.js"></script>
+      <script src="search/main.js"></script> 
+</head>
+
+<body>
+<script>
+if (is_top_frame) { $('body').addClass('wm-top-page'); }
+</script>
+
+<nav class="navbar wm-page-top-frame">
+  <div class="container-fluid wm-top-container">
+    
+    <div class="wm-top-tool pull-right wm-vcenter">
+      <form class="dropdown wm-vcentered" id="wm-search-form" action="./search.html">
+        
+        <button id="wm-search-show" class="btn btn-sm btn-default" type="submit"
+          ><i class="fa fa-search" aria-hidden="true"></i></button>
+
+        <div class="input-group input-group-sm wm-top-search">
+          <input type="text" name="q" class="form-control" id="mkdocs-search-query" placeholder="Search" autocomplete="off">
+          <span class="input-group-btn" role="search">
+            
+            <button class="btn btn-default dropdown-toggle collapse" data-toggle="dropdown" type="button"><span class="caret"></span></button>
+            <ul id="mkdocs-search-results" class="dropdown-menu dropdown-menu-right"></ul>
+            <button id="wm-search-go" class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </span>
+        </div>
+      </form>
+    </div>
+
+    
+    <div class="wm-top-tool wm-vcenter pull-right wm-small-left">
+      <button id="wm-toc-button" type="button" class="btn btn-sm btn-default wm-vcentered"><i class="fa fa-th-list" aria-hidden="true"></i></button>
+    </div>
+
+    
+    
+
+    
+    <a href="" class="wm-top-brand wm-top-link wm-vcenter">
+      
+      <div class="wm-top-title">
+        Tutorials<br>
+        
+      </div>
+    </a>
+  </div>
+</nav>
+
+  <div id="main-content" class="wm-page-top-frame">
+    
+<nav class="wm-toc-pane">
+  
+  <ul class="wm-toctree">
+        <li class="wm-toc-li wm-toc-lev1 "><a href="" class="wm-article-link wm-toc-text">SMB<->Wireguard</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 "><a href="customization.md" class="wm-article-link wm-toc-text">Another Post</a>
+</li>
+        <li class="wm-toc-li wm-toc-lev1 wm-toc-opener"><span class="wm-toc-text">Example with subfolders</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev2 "><a href="sample-a.md" class="wm-article-link wm-toc-text">Sample Page A</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev2 wm-toc-opener"><span class="wm-toc-text">Sample Subfolder</span>
+</li>
+<li class="wm-toc-li-nested collapse">
+  <ul class="wm-toctree">
+      <li class="wm-toc-li wm-toc-lev3 "><a href="sample-a1.md" class="wm-article-link wm-toc-text">Sample Subpage A1</a>
+</li>
+      <li class="wm-toc-li wm-toc-lev3 "><a href="sample-a2.md" class="wm-article-link wm-toc-text">Sample Subpage A2</a>
+</li>
+  </ul>
+</li>
+
+      <li class="wm-toc-li wm-toc-lev2 "><a href="sample-b.md" class="wm-article-link wm-toc-text">Sample Page B</a>
+</li>
+  </ul>
+</li>
+
+  </ul>
+</nav>
+
+    <div class="wm-content-pane">
+      <iframe class="wm-article" name="article"></iframe>
+    </div>
+  </div>
+
+<div class="container-fluid wm-page-content">
+  <a name="_top"></a>
+    
+
+    
+
+    <h1 id="create-wireguard-interface">Create Wireguard interface<a class="headerlink" href="#create-wireguard-interface" title="Permanent link">#</a></h1>
+<p><em>and serve network shares</em></p>
+<h2 id="allow-forwarding">Allow Forwarding<a class="headerlink" href="#allow-forwarding" title="Permanent link">#</a></h2>
+<p>edit <strong><code>/etc/sysctl.conf</code></strong></p>
+<pre><code>net.ipv4.ip_forward=1
+net.ipv6.conf.all.forwarding=1
+</code></pre>
+<p>apply changes with <strong><code>sysctl -p</code></strong></p>
+<h2 id="server-keys">Server Keys<a class="headerlink" href="#server-keys" title="Permanent link">#</a></h2>
+<pre><code class="language-sh">cd /etc/wireguard
+umask 0077
+mkdir keys
+
+wg genkey &gt; keys/server
+wg pubkey &lt; keys/server &gt; keys/server.pub
+</code></pre>
+<h2 id="client-keys">Client Keys<a class="headerlink" href="#client-keys" title="Permanent link">#</a></h2>
+<pre><code class="language-sh">wg genkey &gt; keys/desktop
+wg pubkey &lt; keys/desktop &gt; keys/desktop.pub
+
+wg genkey &gt; keys/mobile
+wg pubkey &lt; keys/mobile &gt; keys/mobile.pub
+</code></pre>
+<h2 id="generate-ipv6-address">Generate ipv6 Address<a class="headerlink" href="#generate-ipv6-address" title="Permanent link">#</a></h2>
+<p>create a unique hash and take the last 5 bytes</p>
+<pre><code class="language-sh">hash=$(printf $(date +%s%N)$(cat /var/lib/dbus/machine-id) |sha256sum |cut -d' ' -f1)
+hash=($(echo ${hash: -10} |fold -w2))
+ipv6=&quot;fd${hash[0]}:${hash[1]}${hash[2]}:${hash[3]}${hash[4]}&quot;
+</code></pre>
+<p>example output of <code>echo $ipv6</code></p>
+<pre><code>fdf8:b321:18d7
+</code></pre>
+<p>keep note of this for later</p>
+<h2 id="config-on-server">Config on Server<a class="headerlink" href="#config-on-server" title="Permanent link">#</a></h2>
+<p>note <code>eth0</code> is whatever your internet facing interface is if different</p>
+<pre><code class="language-sh">echo &quot;
+[Interface]
+Address = 10.0.0.1/24
+Address = IPV6_LOCAL
+SaveConfig = true
+PostUp = iptables -A FORWARD -i %i -j ACCEPT
+PostUp = ip6tables -A FORWARD -i %i -j ACCEPT
+PostUp = iptables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+PostUp = ip6tables -t nat -I POSTROUTING -o eth0 -j MASQUERADE
+PostDown = iptables -D FORWARD -i %i -j ACCEPT
+PostDown = ip6tables -D FORWARD -i %i -j ACCEPT
+PostDown = iptables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+PostDown = ip6tables -t nat -D POSTROUTING -o eth0 -j MASQUERADE
+ListenPort = 51820
+PrivateKey = SERVERKEY
+
+## Desktop
+[Peer]
+PublicKey = PUBKEY1
+AllowedIPs = 10.0.0.101/32, IPV6_1
+
+## Mobile
+[Peer]
+PublicKey = PUBKEY2
+AllowedIPs = 10.0.0.102/32, IPV6_2
+&quot; &gt; wg0.conf
+</code></pre>
+<p>replace with values with the keys we generated earlier</p>
+<pre><code class="language-sh">sed -i wg0.conf \
+    -e &quot;s|SERVERKEY|$(cat keys/server)|&quot; \
+    -e &quot;s|PUBKEY1|$(cat keys/desktop.pub)|&quot; \
+    -e &quot;s|PUBKEY2|$(cat keys/mobile.pub)|&quot; \
+    -e &quot;s|IPV6_LOCAL|${ipv6}::1/64|&quot; \
+    -e &quot;s|IPV6_1|${ipv6}::101/128|&quot; \
+    -e &quot;s|IPV6_2|${ipv6}::102/128|&quot;
+</code></pre>
+<h2 id="config-for-clients">Config for Clients<a class="headerlink" href="#config-for-clients" title="Permanent link">#</a></h2>
+<p>these can be used to create a tunnel in the windows wireguard gui, or simply as reference to do it manually</p>
+<pre><code class="language-sh">echo &quot;
+[Interface]
+PrivateKey = CLIENTKEY1
+Address = 10.0.0.101/32
+Address = IPV6_1
+
+[Peer]
+PublicKey = SERVERKEY
+AllowedIPs = 10.0.0.0/24, IPV6
+Endpoint = IP:51820
+&quot; &gt; desktop.conf
+</code></pre>
+<pre><code class="language-sh">echo &quot;[Interface]
+Address = 10.0.0.102/32
+Address = IPV6_2
+PrivateKey = CLIENTKEY2
+
+[Peer]
+PublicKey = SERVERKEY
+AllowedIPs = 10.0.0.0/24, IPV6
+Endpoint = IP:51820
+&quot; &gt; mobile.conf
+</code></pre>
+<p>again, replace with values with the keys we generated earlier</p>
+<pre><code class="language-sh">sed -i desktop.conf \
+    -e &quot;s|CLIENTKEY1|$(cat keys/desktop)|&quot; \
+    -e &quot;s|SERVERKEY|$(cat keys/server.pub)|&quot; \
+    -e &quot;s|IPV6|${ipv6}::|&quot; \
+    -e &quot;s|IPV6_1|${ipv6}::101/128|&quot; \
+    -e &quot;s|IP|$(hostname -I |awk '{print $1}')|&quot;
+
+sed -i mobile.conf \
+    -e &quot;s|CLIENTKEY1|$(cat keys/mobile)|&quot; \
+    -e &quot;s|SERVERKEY|$(cat keys/server.pub)|&quot; \
+    -e &quot;s|IPV6|${ipv6}::|&quot; \
+    -e &quot;s|IPV6_2|${ipv6}::102/128|&quot; \
+    -e &quot;s|IP|$(hostname -I |awk '{print $1}')|&quot;
+</code></pre>
+<h2 id="create-qrcode-for-android-app">Create qrcode for android app<a class="headerlink" href="#create-qrcode-for-android-app" title="Permanent link">#</a></h2>
+<pre><code>qrencode -t ansiutf8 &lt;mobile.conf
+qrencode -o qrcode.png &lt;mobile.conf
+</code></pre>
+<h3 id="start-wireguard">Start wireguard<a class="headerlink" href="#start-wireguard" title="Permanent link">#</a></h3>
+<pre><code class="language-sh">systemctl enable wg-quick@wg0.service
+systemctl start wg-quick@wg0.service
+wg show
+</code></pre>
+<h2 id="smb">SMB<a class="headerlink" href="#smb" title="Permanent link">#</a></h2>
+<p>edit <strong><code>/etc/samba/smb.conf</code></strong></p>
+<pre><code>server string = Wireguard Share
+interfaces = 10.0.0.1/32
+
+[public]
+    comment = Public Share
+    path = /share
+    read only = no
+    guest ok = yes
+</code></pre>
+<pre><code>mkdir /share
+chmod 777 /share
+</code></pre>
+<pre><code class="language-sh">systemctl enable smbd
+systemctl start smbd
+</code></pre>
+<hr />
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">#</a></h3>
+<ul>
+<li>
+<p>You may notice you cant ping your peers from the server,
+this is from client side firewall (computer, not router) blocking inbound packets</p>
+</li>
+<li>
+<p>By default we just want a VPN, to forward ALL traffic and act as a proxy, in <strong>client config</strong> change:
+under interface: <code>DNS = 10.0.0.1</code>
+under peer: <code>AllowedIPs = 0.0.0.0/0, ::/0</code></p>
+</li>
+</ul>
+
+  <br>
+    
+
+    <br>
+</div>
+
+<footer class="col-md-12 wm-page-content">
+  <p>Documentation built with <a href="http://www.mkdocs.org/">MkDocs</a> using <a href="">Windmill Dark</a> theme by None (noraj).</p>
+</footer>
+
+</body>
+</html>
+<!--
+MkDocs version : 1.3.0
+Build Date UTC : 2022-05-03 21:00:37.019811+00:00
+-->
