@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>None</loc>
-         <lastmod>2022-05-03</lastmod>
+         <loc>https://skydrome.github.io/blog/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/sample-a/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/sample-a1/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/sample-a2/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/sample-b/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/wireguard/configuration/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/wireguard/installation/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/wireguard/mikrotik/</loc>
+         <lastmod>2022-05-04</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://skydrome.github.io/blog/wireguard/samba/</loc>
+         <lastmod>2022-05-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
